@@ -17,6 +17,9 @@ env/
 # Claude local settings
 .claude/
 
+# HuggingFace datasets cache
+data_cache/
+
 # Jupyter
 .ipynb_checkpoints/
 
