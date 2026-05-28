@@ -1,0 +1,46 @@
+# config.yaml
+data:
+  train_path: "data/imdb_train.csv"
+  test_path: "data/imdb_test.csv"
+  max_vocab_size: 10000
+  max_sequence_length: 200
+  encoding: "utf-8-sig"
+
+model:
+  embed_dim: 128
+  hidden_dim: 256
+  num_classes: 2
+  dropout_rate: 0.5
+  bidirectional: true
+
+training:
+  num_epochs: 10
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  gradient_clip: 1.0
+  validation_freq: 1  # 每几个epoch验证一次
+  save_best_model: true
+  early_stopping_patience: 3
+
+paths:
+  results_dir: "results"
+  models_dir: "results/models"
+  logs_dir: "results/logs"
+  figures_dir: "results/figures"
+  vocab_file: "results/vocab.json"
+  best_model: "results/models/best_model.pth"
+  final_model: "results/models/final_model.pth"
+  report_file: "results/training_report.txt"
+  curve_file: "results/figures/training_results.png"
+
+hardware:
+  device: "auto"  # auto, cpu, cuda
+  batch_size:
+    default: 32
+    gpu_memory_thresholds:
+      - threshold_gb: 10
+        batch_size: 64
+      - threshold_gb: 8
+        batch_size: 32
+      - threshold_gb: 0
+        batch_size: 16
