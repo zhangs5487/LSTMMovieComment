@@ -1,7 +1,7 @@
 # LSTMMovieComment
 
 基于 LSTM + Attention 的英文电影评论情感分析（IMDB 二分类：正面/负面）。
-
+![alt text](image.png)
 ## 模型架构
 
 | 层 | 规格 |
