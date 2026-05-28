@@ -1,0 +1,37 @@
+2026-05-13 15:56:22,694 - __main__ - INFO - ============================================================
+2026-05-13 15:56:22,694 - __main__ - INFO - 情感分析预测器 - 2026-05-13 15:56:22
+2026-05-13 15:56:22,694 - __main__ - INFO - ============================================================
+2026-05-13 15:56:22,695 - __main__ - INFO - 模型路径: results/models/best_model.pth
+2026-05-13 15:56:22,695 - __main__ - INFO - 词汇表路径: results/vocab.json
+2026-05-13 15:56:22,710 - __main__ - INFO - 使用设备: cuda
+2026-05-13 15:56:22,711 - __main__ - INFO - 加载词汇表: results/vocab.json
+2026-05-13 15:56:22,716 - src.data_preprocessing - INFO - 词汇表已加载: 10,000 个词汇
+2026-05-13 15:56:22,716 - __main__ - INFO - 词汇表大小: 10,000
+2026-05-13 15:56:22,716 - __main__ - INFO - 加载模型: results/models/best_model.pth
+2026-05-13 15:56:22,808 - __main__ - INFO - 成功加载checkpoint
+2026-05-13 15:56:22,809 - __main__ - INFO - 使用配置参数 - embed_dim: 128, hidden_size: 128, num_layers: 2, num_classes: 2, dropout: 0.5
+2026-05-13 15:56:22,809 - __main__ - ERROR - 模型加载失败: LSTMWithAttention.__init__() got an unexpected keyword argument 'embed_dim'
+Traceback (most recent call last):
+  File "c:\Users\ASUS\Downloads\CQCAI\LSTMmovieComment\scripts\test.py", line 81, in _load_model
+    model = LSTMWithAttention(
+            ^^^^^^^^^^^^^^^^^^
+TypeError: LSTMWithAttention.__init__() got an unexpected keyword argument 'embed_dim'
+2026-05-13 15:56:22,809 - __main__ - ERROR - 预测器初始化失败: 无法加载模型: LSTMWithAttention.__init__() got an unexpected keyword argument 'embed_dim'
+Traceback (most recent call last):
+  File "c:\Users\ASUS\Downloads\CQCAI\LSTMmovieComment\scripts\test.py", line 81, in _load_model
+    model = LSTMWithAttention(
+            ^^^^^^^^^^^^^^^^^^
+TypeError: LSTMWithAttention.__init__() got an unexpected keyword argument 'embed_dim'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ASUS\Downloads\CQCAI\LSTMmovieComment\scripts\test.py", line 312, in main
+    predictor = SentimentPredictor(model_path, vocab_path, config)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ASUS\Downloads\CQCAI\LSTMmovieComment\scripts\test.py", line 56, in __init__
+    self.model = self._load_model(model_path, config)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ASUS\Downloads\CQCAI\LSTMmovieComment\scripts\test.py", line 101, in _load_model
+    raise RuntimeError(f"无法加载模型: {str(e)}")
+RuntimeError: 无法加载模型: LSTMWithAttention.__init__() got an unexpected keyword argument 'embed_dim'

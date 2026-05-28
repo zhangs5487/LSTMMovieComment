@@ -1,0 +1,65 @@
+2026-05-16 22:19:41,409 - __main__ - INFO - ============================================================
+2026-05-16 22:19:41,409 - __main__ - INFO - 情感分析模型训练 - 2026-05-16 22:19:41
+2026-05-16 22:19:41,409 - __main__ - INFO - ============================================================
+2026-05-16 22:19:41,409 - __main__ - INFO - 
+1. 准备数据...
+2026-05-16 22:19:41,409 - src.dataset - INFO - 加载训练数据: data/imdb_train.csv
+2026-05-16 22:19:41,571 - src.dataset - INFO - 加载测试数据: data/imdb_test.csv
+2026-05-16 22:19:41,727 - src.dataset - INFO - 训练集大小: 25,000 条
+2026-05-16 22:19:41,730 - src.dataset - INFO - 测试集大小: 25,000 条
+2026-05-16 22:19:41,730 - __main__ - INFO - 
+2. 文本预处理...
+2026-05-16 22:19:41,730 - src.dataset - INFO - 使用训练集构建词汇表...
+2026-05-16 22:19:41,731 - src.data_preprocessing - INFO - 构建词汇表 (最大词汇数: 10,000)
+2026-05-16 22:19:42,402 - src.data_preprocessing - INFO -   已处理 10,000 条文本，当前词汇数: 117,383
+2026-05-16 22:19:43,102 - src.data_preprocessing - INFO -   已处理 20,000 条文本，当前词汇数: 180,988
+2026-05-16 22:19:43,475 - src.data_preprocessing - INFO - 词汇统计完成！总词汇数: 207,022
+2026-05-16 22:19:43,495 - src.data_preprocessing - INFO - 词汇表构建完成！最终词汇数: 10,000
+2026-05-16 22:19:43,503 - src.data_preprocessing - INFO - 词汇表已保存到: results/vocab.json
+2026-05-16 22:19:43,503 - src.data_preprocessing - INFO - 词汇表大小: 10,000
+2026-05-16 22:19:43,503 - __main__ - INFO - 
+3. 创建数据集...
+2026-05-16 22:19:43,503 - src.dataset - INFO - 创建训练数据集...
+2026-05-16 22:19:43,503 - src.dataset - INFO - 创建数据集: 25000 条样本
+2026-05-16 22:19:43,504 - src.dataset - INFO - 序列长度: 200
+2026-05-16 22:19:43,504 - src.dataset - INFO - 创建测试数据集...
+2026-05-16 22:19:43,504 - src.dataset - INFO - 创建数据集: 25000 条样本
+2026-05-16 22:19:43,504 - src.dataset - INFO - 序列长度: 200
+2026-05-16 22:19:43,530 - src.dataset - INFO - 检测到GPU内存: 8.0 GB
+2026-05-16 22:19:43,530 - src.dataset - INFO - 创建数据加载器 (batch size: 16)
+2026-05-16 22:19:43,530 - src.dataset - INFO - 训练批次: 1563
+2026-05-16 22:19:43,530 - src.dataset - INFO - 测试批次: 1563
+2026-05-16 22:19:43,530 - __main__ - INFO - 
+4. 初始化模型...
+2026-05-16 22:19:43,543 - src.model - INFO - 模型初始化完成
+2026-05-16 22:19:43,543 - src.model - INFO -   词汇表大小: 10,000
+2026-05-16 22:19:43,543 - src.model - INFO -   嵌入维度: 128
+2026-05-16 22:19:43,543 - src.model - INFO -   LSTM隐藏层: 256 (双向)
+2026-05-16 22:19:43,543 - src.model - INFO -   总参数量: 2,072,067
+2026-05-16 22:19:43,543 - __main__ - INFO - 
+5. 开始训练...
+2026-05-16 22:19:43,543 - src.trainer - INFO - 使用设备: cuda
+2026-05-16 22:19:43,543 - src.trainer - INFO - GPU: NVIDIA GeForce RTX 5060
+2026-05-16 22:19:43,543 - src.trainer - INFO - 显存: 8.0 GB
+2026-05-16 22:19:44,338 - src.trainer - INFO - 数据集大小: 训练=25,000, 验证=25,000
+2026-05-16 22:19:44,339 - src.trainer - INFO - 开始训练...
+2026-05-16 22:20:27,001 - src.trainer - INFO - 模型已保存: results/models/best_model.pth
+2026-05-16 22:20:27,002 - src.trainer - INFO - Epoch  1/10 | Train Loss: 0.4333 | Train Acc: 80.02% | Val Loss: 0.3314 | Val Acc: 85.53% | Time: 42.66s
+2026-05-16 22:21:04,623 - src.trainer - INFO - 模型已保存: results/models/best_model.pth
+2026-05-16 22:21:04,624 - src.trainer - INFO - Epoch  2/10 | Train Loss: 0.3008 | Train Acc: 87.53% | Val Loss: 0.3231 | Val Acc: 86.12% | Time: 37.62s
+2026-05-16 22:21:42,228 - src.trainer - INFO - 模型已保存: results/models/best_model.pth
+2026-05-16 22:21:42,250 - src.trainer - INFO - 模型已保存: results/models/final_model.pth
+2026-05-16 22:21:42,251 - src.trainer - INFO - ==================================================
+2026-05-16 22:21:42,251 - src.trainer - INFO - 训练完成 | 总时间: 1.96 min
+2026-05-16 22:21:42,251 - src.trainer - INFO - 最佳验证准确率: 86.17%
+2026-05-16 22:21:42,251 - src.trainer - INFO - 最佳验证损失: 0.3189
+2026-05-16 22:21:42,251 - src.trainer - INFO - ==================================================
+2026-05-16 22:21:42,251 - __main__ - INFO - 
+6. 生成报告和可视化...
+2026-05-16 22:21:42,251 - src.trainer - INFO - 报告已保存: results/training_report.txt
+2026-05-16 22:21:42,630 - src.trainer - INFO - 训练曲线已保存: results/figures/training_results.png
+2026-05-16 22:21:42,632 - __main__ - INFO -    - 模型: results/models/
+2026-05-16 22:21:42,632 - __main__ - INFO -    - 词汇表: results/vocab.json
+2026-05-16 22:21:42,632 - __main__ - INFO -    - 训练曲线: results/figures/
+2026-05-16 22:21:42,632 - __main__ - INFO -    - 训练报告: results/training_report.txt
+2026-05-16 22:21:42,632 - __main__ - INFO - ============================================================

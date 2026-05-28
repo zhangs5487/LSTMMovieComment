@@ -17,26 +17,6 @@ env/
 # Claude local settings
 .claude/
 
-# Data (large files — run scripts/download_imdb.py to generate)
-data/*.csv
-
-# Data cache (large files)
-data_cache/
-
-# Model checkpoints (binary, regenerate by running training)
-results/models/*.pth
-
-# Logs
-results/logs/
-
-# Output figures (regenerate on run)
-results/figures/
-label_distribution.png
-handwritten_wordcloud_no_overlap.png
-
-# Test predictions CSV
-results/test_predictions.csv
-
 # Jupyter
 .ipynb_checkpoints/
 
