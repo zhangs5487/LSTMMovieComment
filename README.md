@@ -1,0 +1,2 @@
+# LSTMMovieComment
+基于长短记忆网络的英文电影评论情感分析
